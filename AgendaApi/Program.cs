@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using AgendaApi.Data;
+using AgendaApi.Repositories.Interfaces;
+using AgendaApi.Repositories;          
+using AgendaApi.Services.Interfaces;   
+using AgendaApi.Services;              
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +14,11 @@ builder.Services.AddSwaggerGen();
 // DbContext configuration
 builder.Services.AddDbContext<AgendaContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Register repositories and services
+builder.Services.AddScoped<IContactRepository, ContactRepository>();
+builder.Services.AddScoped<IContactService, ContactService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
