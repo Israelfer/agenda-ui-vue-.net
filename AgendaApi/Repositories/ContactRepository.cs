@@ -1,45 +1,56 @@
 using AgendaApi.Data;
 using AgendaApi.Models;
+using AgendaApi.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-public class ContactRepository : IContactRepository
+namespace AgendaApi.Repositories
 {
-    private readonly AgendaDbContext _context;
-
-    public ContactRepository(AgendaDbContext context)
+    public class ContactRepository : IContactRepository
     {
-        _context = context;
-    }
+        private readonly AgendaContext _context;
 
-    public async Task<IEnumerable<Contact>> GetAllContactsAsync()
-    {
-        return await _context.Contacts.ToListAsync();
-    }
-
-    public async Task<Contact?> GetContactByIdAsync(int id)
-    {
-        return await _context.Contacts.FindAsync(id);
-    }
-
-    public async Task AddContactAsync(Contact contact)
-    {
-        await _context.Contacts.AddAsync(contact);
-        await _context.SaveChangesAsync();
-    }
-
-    public async Task UpdateContactAsync(Contact contact)
-    {
-        _context.Contacts.Update(contact);
-        await _context.SaveChangesAsync();
-    }
-
-    public async Task DeleteContactAsync(int id)
-    {
-        var contact = await GetContactByIdAsync(id);
-        if (contact != null)
+        public ContactRepository(AgendaContext context)
         {
-            _context.Contacts.Remove(contact);
+            _context = context;
+        }
+
+        public async Task<IEnumerable<Contact>> GetAllAsync()
+        {
+            return await _context.Contacts.ToListAsync();
+        }
+
+        public async Task<Contact> GetByIdAsync(int id)
+        {
+            return await _context.Contacts.FindAsync(id);
+        }
+
+        public async Task AddAsync(Contact contact)
+        {
+            await _context.Contacts.AddAsync(contact);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(Contact contact)
+        {
+            _context.Contacts.Update(contact);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var contact = await _context.Contacts.FindAsync(id);
+            if (contact != null)
+            {
+                _context.Contacts.Remove(contact);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<bool> ExistsAsync(int id)
+        {
+            return await _context.Contacts.AnyAsync(e => e.Id == id);
         }
     }
 }

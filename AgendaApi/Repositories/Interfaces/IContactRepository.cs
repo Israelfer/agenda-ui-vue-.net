@@ -1,10 +1,16 @@
 using AgendaApi.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-public interface IContactRepository
+namespace AgendaApi.Repositories.Interfaces
 {
-    Task<IEnumerable<Contact>> GetAllContactsAsync();
-    Task<Contact?> GetContactByIdAsync(int id);
-    Task AddContactAsync(Contact contact);
-    Task UpdateContactAsync(Contact contact);
-    Task DeleteContactAsync(int id);
+    public interface IContactRepository
+    {
+        Task<IEnumerable<Contact>> GetAllAsync();
+        Task<Contact> GetByIdAsync(int id);
+        Task AddAsync(Contact contact);
+        Task UpdateAsync(Contact contact);
+        Task DeleteAsync(int id);
+        Task<bool> ExistsAsync(int id);
+    }
 }
