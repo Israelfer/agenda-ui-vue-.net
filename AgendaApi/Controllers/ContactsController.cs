@@ -2,11 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using AgendaApi.Models;
 using AgendaApi.Services;
 using AgendaApi.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AgendaApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ContactsController : ControllerBase
     {
         private readonly IContactService _contactService;
