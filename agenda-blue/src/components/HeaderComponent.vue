@@ -8,7 +8,7 @@
   </header>
 </template>
 
-<script setup>
+<script>
 </script>
 
 <style>

@@ -13,8 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Configurar o contexto do banco de dados
 builder.Services.AddDbContext<AgendaContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
-);
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 // Adicionar serviços ao container
 builder.Services.AddScoped<IContactRepository, ContactRepository>();
@@ -36,6 +36,7 @@ builder.Services.AddCors(options =>
         }
     );
 });
+
 
 var app = builder.Build();
 

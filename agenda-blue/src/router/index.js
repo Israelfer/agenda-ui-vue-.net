@@ -5,6 +5,7 @@ import ContactForm from '../views/ContactForm.vue';
 const routes = [
   { path: '/', component: ContactList },
   { path: '/new', component: ContactForm },
+  { path: '/edit/:id', component: ContactForm },
 ];
 
 const router = createRouter({

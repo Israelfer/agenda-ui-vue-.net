@@ -1,9 +1,9 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using AgendaApi.Data;
 using AgendaApi.Models;
 using AgendaApi.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace AgendaApi.Repositories
 {
@@ -34,7 +34,21 @@ namespace AgendaApi.Repositories
 
         public async Task UpdateAsync(Contact contact)
         {
-            _context.Contacts.Update(contact);
+            var existingContact = await _context
+                .Contacts.AsNoTracking()
+                .FirstOrDefaultAsync(c => c.Id == contact.Id);
+
+            if (existingContact == null)
+            {
+                throw new InvalidOperationException("Contact not found");
+            }
+
+            // Desanexa o contato existente
+            _context.Entry(existingContact).State = EntityState.Detached;
+
+            // Define o estado da entidade para 'Modified'
+            _context.Entry(contact).State = EntityState.Modified;
+
             await _context.SaveChangesAsync();
         }
 

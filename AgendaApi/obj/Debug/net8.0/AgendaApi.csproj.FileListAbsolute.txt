@@ -1,11 +1,3 @@
-E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.csproj.AssemblyReference.cache
-E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.GeneratedMSBuildEditorConfig.editorconfig
-E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.AssemblyInfoInputs.cache
-E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.AssemblyInfo.cs
-E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.csproj.CoreCompileInputs.cache
-E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.MvcApplicationPartsAssemblyInfo.cs
-E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.MvcApplicationPartsAssemblyInfo.cache
-E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.sourcelink.json
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\appsettings.Development.json
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\appsettings.json
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\AgendaApi.exe
@@ -15,7 +7,11 @@ E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\AgendaApi.dll
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\AgendaApi.pdb
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\Azure.Core.dll
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\Azure.Identity.dll
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\FluentValidation.dll
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\Humanizer.dll
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -124,6 +120,14 @@ E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.csproj.AssemblyReference.cache
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.GeneratedMSBuildEditorConfig.editorconfig
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.AssemblyInfoInputs.cache
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.AssemblyInfo.cs
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.csproj.CoreCompileInputs.cache
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.MvcApplicationPartsAssemblyInfo.cs
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.MvcApplicationPartsAssemblyInfo.cache
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.sourcelink.json
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\staticwebassets.build.json
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\staticwebassets.development.json
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\staticwebassets\msbuild.AgendaApi.Microsoft.AspNetCore.StaticWebAssets.props
@@ -138,7 +142,3 @@ E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\refint\AgendaApi.dll
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.pdb
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.genruntimeconfig.cache
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\ref\AgendaApi.dll
-E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\FluentValidation.dll
-E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
-E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
-E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
