@@ -1,11 +1,8 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using AgendaApi.Commands;
-using AgendaApi.Models;
-using AgendaApi.Queries;
-using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using AgendaApi.Models;
+using AgendaApi.Services;
+using AgendaApi.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AgendaApi.Controllers
 {
@@ -14,26 +11,24 @@ namespace AgendaApi.Controllers
     [Authorize]
     public class ContactsController : ControllerBase
     {
-        private readonly IMediator _mediator;
+        private readonly IContactService _contactService;
 
-        public ContactsController(IMediator mediator)
+        public ContactsController(IContactService contactService)
         {
-            _mediator = mediator;
+            _contactService = contactService;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Contact>>> GetContacts()
         {
-            var query = new GetAllContactsQuery();
-            var contacts = await _mediator.Send(query);
+            var contacts = await _contactService.GetAllContactsAsync();
             return Ok(contacts);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Contact>> GetContact(int id)
         {
-            var query = new GetContactByIdQuery(id);
-            var contact = await _mediator.Send(query);
+            var contact = await _contactService.GetContactByIdAsync(id);
 
             if (contact == null)
             {
@@ -44,26 +39,27 @@ namespace AgendaApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Contact>> PostContact([FromBody] AddContactCommand command)
+        public async Task<ActionResult<Contact>> PostContact(Contact contact)
         {
-            var contact = await _mediator.Send(command);
+            await _contactService.AddContactAsync(contact);
             return CreatedAtAction(nameof(GetContact), new { id = contact.Id }, contact);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutContact(int id, [FromBody] UpdateContactCommand command)
+        public async Task<IActionResult> PutContact(int id, Contact contact)
         {
-            if (id != command.Id)
+            if (id != contact.Id)
             {
                 return BadRequest();
             }
 
-            var updatedContact = await _mediator.Send(command);
-
-            if (updatedContact == null)
+            var existingContact = await _contactService.GetContactByIdAsync(id);
+            if (existingContact == null)
             {
                 return NotFound();
             }
+
+            await _contactService.UpdateContactAsync(contact);
 
             return NoContent();
         }
@@ -71,13 +67,13 @@ namespace AgendaApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteContact(int id)
         {
-            var command = new DeleteContactCommand(id);
-            var result = await _mediator.Send(command);
-
-            if (!result)
+            var contact = await _contactService.GetContactByIdAsync(id);
+            if (contact == null)
             {
                 return NotFound();
             }
+
+            await _contactService.DeleteContactAsync(id);
 
             return NoContent();
         }
