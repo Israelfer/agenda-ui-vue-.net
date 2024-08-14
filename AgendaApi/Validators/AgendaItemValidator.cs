@@ -1,4 +1,5 @@
 using FluentValidation;
+using AgendaApi.Models;
 
 public class ContactValidator : AbstractValidator<Contact>
 {

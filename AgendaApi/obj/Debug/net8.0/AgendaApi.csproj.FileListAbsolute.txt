@@ -138,3 +138,7 @@ E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\refint\AgendaApi.dll
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.pdb
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\AgendaApi.genruntimeconfig.cache
 E:\GITHUB\agenda-ui-vue-.net\AgendaApi\obj\Debug\net8.0\ref\AgendaApi.dll
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\FluentValidation.dll
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+E:\GITHUB\agenda-ui-vue-.net\AgendaApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
